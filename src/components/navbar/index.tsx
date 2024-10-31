@@ -14,22 +14,31 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
+import { useSidebar } from "@/components/ui/sidebar"
 
 export function NavigationMenuDemo() {
-  const [isOpen, setIsOpen] = useState(false);
-
+  const {
+    state,
+    open,
+    setOpen,
+    openMobile,
+    setOpenMobile,
+    isMobile,
+    toggleSidebar,
+  } = useSidebar()
   return (
+    <nav className="p-4 bg-white shadow">
     <div className="relative flex items-center justify-between">
       {/* Logo - Visible on larger screens only */}
-      <div className="hidden lg:flex items-center">
+      <div className="flex items-center">
         <img src="/path/to/logo.png" alt="Logo" className="h-8 w-auto" />
         <span className="ml-2 text-xl font-semibold">Your Brand</span>
       </div>
 
       {/* Mobile Menu Toggle Button */}
       <button
-        onClick={() => setIsOpen(!isOpen)}
-        className="block lg:hidden p-2 text-gray-700 focus:outline-none"
+        onClick={() => setOpenMobile(!openMobile)}
+        className="ml-auto block lg:hidden p-2 text-gray-700 focus:outline-none"
       >
         <svg
           className="w-6 h-6"
@@ -49,11 +58,7 @@ export function NavigationMenuDemo() {
 
       {/* Navigation Menu */}
       <NavigationMenu
-        className={cn("lg:flex", {
-          hidden: !isOpen,
-          block: isOpen,
-          "lg:block": true,
-        })}
+        className={cn("hidden lg:flex")}
       >
         <NavigationMenuList className="flex flex-col lg:flex-row">
           <NavigationMenuItem>
@@ -133,7 +138,9 @@ export function NavigationMenuDemo() {
         </NavigationMenuList>
       </NavigationMenu>
     </div>
-  );
+    </nav>
+
+  )
 }
 
 const ListItem = React.forwardRef<React.ElementRef<"a">, React.ComponentPropsWithoutRef<"a">>(

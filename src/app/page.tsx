@@ -1,11 +1,12 @@
-import Image from "next/image";
-import { NavigationMenuDemo } from '@/components/navbar'
+import { NavigationMenuDemo } from "@/components/navbar";
+
 export default function Home() {
   return (
-    <div className="container">
-      <div className="grid">
-
-      </div>
-    </div>
+<>
+<div className="flex-row w-full">
+<NavigationMenuDemo/>
+<main>asasdasljhdasljkdhasjkhasdkjashdjkasdhsjak</main>
+</div>
+</>
   );
 }

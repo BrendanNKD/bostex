@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import { NavigationMenuDemo } from '@/components/navbar'
+import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar"
+import { AppSidebar } from "@/components/sidebar";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -26,16 +28,20 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="antialiased">
-        <div className="flex flex-col min-h-screen">
-          <nav className="p-4 bg-white shadow">
-            <NavigationMenuDemo />
-          </nav>
-          <main className="flex-grow p-4">
-            {children}
-          </main>
-        </div>
-      </body>
+    <head>
+        {/* Any additional head elements */}
+    </head>
+        <body
+            className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+          >
+          <SidebarProvider defaultOpen={false} >
+          <AppSidebar></AppSidebar>
+          <SidebarTrigger />
+          {children} 
+          </SidebarProvider> 
+        
+        </body>
+ 
     </html>
   );
 }
