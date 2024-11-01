@@ -31,13 +31,18 @@ export function NavigationMenuDemo() {
     <div className="relative flex items-center justify-between">
       {/* Logo - Visible on larger screens only */}
       <div className="flex items-center">
-        <img src="/path/to/logo.png" alt="Logo" className="h-8 w-auto" />
+        <img src="vercel.svg" alt="Logo" className="h-8 w-auto" />
         <span className="ml-2 text-xl font-semibold">Your Brand</span>
       </div>
 
       {/* Mobile Menu Toggle Button */}
       <button
-        onClick={() => setOpenMobile(!openMobile)}
+        onClick={() => {        
+          if (isMobile) {
+          setOpenMobile(!openMobile);
+          } else {
+          setOpen(!open);
+         }}}
         className="ml-auto block lg:hidden p-2 text-gray-700 focus:outline-none"
       >
         <svg
@@ -125,13 +130,13 @@ export function NavigationMenuDemo() {
           </NavigationMenuItem>
 
           <NavigationMenuItem>
-            <Link href="/docs" legacyBehavior passHref>
+            <Link href="/" legacyBehavior passHref>
               <NavigationMenuLink className={navigationMenuTriggerStyle()}>About us</NavigationMenuLink>
             </Link>
           </NavigationMenuItem>
 
           <NavigationMenuItem>
-            <Link href="/docs" legacyBehavior passHref>
+            <Link href="/products" legacyBehavior passHref>
               <NavigationMenuLink className={navigationMenuTriggerStyle()}>Contact us</NavigationMenuLink>
             </Link>
           </NavigationMenuItem>

@@ -4,8 +4,7 @@ export default function Home() {
   return (
 <>
 <div className="flex-row w-full">
-
-<main>its me!!!!</main>
+<main>its product</main>
 </div>
 </>
   );
