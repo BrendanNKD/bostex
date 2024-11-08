@@ -5,8 +5,6 @@ import "./globals.css";
 import { NavigationMenuDemo } from "@/components/navbar";
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/sidebar";
-import { motion, AnimatePresence } from "framer-motion";
-import PageTransition from "./animate/page-transition";
 
 
 const geistSans = localFont({
@@ -44,9 +42,9 @@ export default function RootLayout({
           <SidebarTrigger />
           <div className="flex-row w-full">
             <NavigationMenuDemo />
-
+            <main>
             {children}
-
+            </main>
           </div>
         </SidebarProvider>
       </body>
