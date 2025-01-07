@@ -1,0 +1,38 @@
+{
+    "home": {
+
+        "services": 
+        {
+            "title":"Take A Look At Services We Provide",
+            "description":"We specialize in delivering cutting-edge solutions for secure environments, smart infrastructure, and optimized technology. Based in Singapore, our expertise spans access control systems, cloud-based applications, and data center technologies.",
+            "article":     {
+                "title": "Services",
+                "desc": "The goal of web development is to create a functional, visually appealing, and user-friendly online presence.",
+                "data": [
+                    {
+                        "icon": "/assets/homepage/icons/services1.svg",
+                        "title": "Access Control System",
+                        "desc": "Enhance your security infrastructure with our advanced access control solutions, designed for reliability, scalability, and ease of use."
+                    },
+                    {
+                        "icon": "/assets/homepage/icons/services2.svg",
+                        "title": "Custom Technology Development",
+                        "desc": "Tailored solutions for your unique requirements. From conceptualization to deployment, we bring your ideas to life."
+                    },
+                    {
+                        "icon": "/assets/homepage/icons/services3.svg",
+                        "title": "System Integration",
+                        "desc": "Seamlessly integrate our solutions with other security system.  This includes integrating with CCTV surveillance systems, lift destination control systems and intrusion detection."
+                    },
+                    {
+                        "icon": "/assets/homepage/icons/services4.svg",
+                        "title": "Digital Transformation Consulting",
+                        "desc": "Leverage our expertise and experience to digitize and transform your business processes, making them more efficient and future-ready."
+                    }
+                ]
+            }
+        }
+
+
+    }
+}

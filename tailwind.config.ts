@@ -9,6 +9,21 @@ const config: Config = {
   ],
   theme: {
   	extend: {
+		keyframes: {
+			typing: {
+				"0%": { width: "0%" },
+				"50%": { width: "100%" },
+				"75%": { width: "100%" },
+				"100%": { width: "0%" },
+			},
+			blink: {
+				"50%": { borderColor: "transparent" },
+				},
+		},
+		animation: {
+			typing: "typing 6s steps(40, end) infinite",
+			blink: "blink 0.6s step-end infinite",
+		},
   		colors: {
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
