@@ -23,11 +23,6 @@
                         "icon": "/assets/homepage/icons/services3.svg",
                         "title": "System Integration",
                         "desc": "Seamlessly integrate our solutions with other security system.  This includes integrating with CCTV surveillance systems, lift destination control systems and intrusion detection."
-                    },
-                    {
-                        "icon": "/assets/homepage/icons/services4.svg",
-                        "title": "Digital Transformation Consulting",
-                        "desc": "Leverage our expertise and experience to digitize and transform your business processes, making them more efficient and future-ready."
                     }
                 ]
             }

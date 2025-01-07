@@ -25,7 +25,7 @@ import Reveal from '@/components/animate/reveal'
 const IconText = ({ content }: IProps) => {
     return (
         <div className="container mx-auto py-10 px-4">
-            <article className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <article className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 {content.data.map((service, index) => (
                     <Reveal key={index} className="w-full">
                         <Card className="flex flex-col h-full hover:bg-[#262626] rounded-xl bg-transparent border-none">

@@ -25,7 +25,7 @@ export default function Home() {
         <div className="relative z-10 flex items-center justify-center h-full w-full bg-black bg-opacity-50">
           <div className="gap-4 w-full max-w-screen-xl text-white p-4 text-center">
             <div className="flex flex-col">
-              <h1>Bostex</h1>
+              <h1>Catch phrase</h1>
               <p className="text-7xl">One-stop access control</p>
               <div className="flex justify-center gap-4 mt-4">
                 <button className="px-6 py-2 border border-white text-white rounded-full hover:bg-white hover:text-black transition">
@@ -135,6 +135,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <hr></hr>
       <Footer></Footer>
     </>
   );

@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 import {
   NavigationMenu,
@@ -24,12 +25,14 @@ export function NavigationMenuDemo() {
   } = useSidebar();
 
   return (
-    <nav className="absolute top-0 left-0 w-full p-4 bg-transparent z-50">
-      <div className="relative flex items-center justify-between">
+    <nav className="absolute top-0 left-0 w-full p-4 z-50">
+      <div className="relative flex items-center justify-between bg-gray-100 bg-opacity-20 backdrop-blur-md px-10 py-2 rounded-lg shadow-lg">
+
         {/* Logo - Visible on larger screens only */}
         <div className="flex items-center">
-          {/* <Image src="vercel.svg" alt="Logo" className="h-8 w-auto" /> */}
-          <span className="ml-2 text-xl font-semibold text-white">Your Brand</span>
+          <Image src="/assets/shared/logo/bostex.png" alt="Logo"
+            width={150}
+            height={150} />
         </div>
 
         {/* Mobile Menu Toggle Button */}
