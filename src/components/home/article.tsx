@@ -5,6 +5,7 @@ import {
     CardHeader,
     CardTitle,
 } from '@/components/ui/card'
+import Image from "next/image";
 
 interface iconTextContent {
     icon: string
@@ -30,9 +31,11 @@ const IconText = ({ content }: IProps) => {
                         <Card className="flex flex-col h-full hover:bg-[#262626] rounded-xl bg-transparent border-none">
                             <CardHeader className="space-y-8">
                                 <div className="flex flex-row justify-between items-center">
-                                    <img
+                                    <Image
                                         className="w-16 h-16 object-contain"
                                         src={service.icon}
+                                        width={300} // Set appropriate width
+                                        height={300} // Set appropriate height
                                         alt="icon"
                                     />
                                 </div>

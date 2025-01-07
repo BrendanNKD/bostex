@@ -72,7 +72,7 @@ const Footer = () => {
           <span className="block text-center sm:text-left">
             © {new Date().getFullYear()}{" "}
             <a href="apollocode.io" className="hover:underline">
-              Apollocode™
+              Bostex™
             </a>
             . All Rights Reserved.
           </span>

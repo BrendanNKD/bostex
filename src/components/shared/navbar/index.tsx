@@ -2,8 +2,6 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { useState } from "react";
-
 import { cn } from "@/lib/utils";
 import {
   NavigationMenu,
@@ -18,13 +16,11 @@ import { useSidebar } from "@/components/ui/sidebar"
 
 export function NavigationMenuDemo() {
   const {
-    state,
     open,
     setOpen,
     openMobile,
     setOpenMobile,
     isMobile,
-    toggleSidebar,
   } = useSidebar();
 
   return (
@@ -32,7 +28,7 @@ export function NavigationMenuDemo() {
       <div className="relative flex items-center justify-between">
         {/* Logo - Visible on larger screens only */}
         <div className="flex items-center">
-          <img src="vercel.svg" alt="Logo" className="h-8 w-auto" />
+          {/* <Image src="vercel.svg" alt="Logo" className="h-8 w-auto" /> */}
           <span className="ml-2 text-xl font-semibold text-white">Your Brand</span>
         </div>
 
@@ -72,7 +68,7 @@ export function NavigationMenuDemo() {
                 <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr] bg-white bg-opacity-90">
                   <li className="row-span-3">
                     <NavigationMenuLink asChild>
-                      <a
+                      <Link
                         className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
                         href="/"
                       >
@@ -81,7 +77,7 @@ export function NavigationMenuDemo() {
                           Beautifully designed components that you can copy and paste into your apps. Accessible.
                           Customizable. Open Source.
                         </p>
-                      </a>
+                      </Link>
                     </NavigationMenuLink>
                   </li>
                   <ListItem href="/docs" title="Introduction">
