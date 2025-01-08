@@ -9,10 +9,8 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
-  SidebarMenuSub,
-  SidebarMenuSubItem,
 } from "@/components/ui/sidebar"
-import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "../../ui/collapsible"
+// import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "../../ui/collapsible"
 import Link from "next/link"
 import Image from "next/image"
 import { Calendar, Home, Inbox, Search, Settings } from "lucide-react"

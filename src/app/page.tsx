@@ -180,7 +180,7 @@ export default function Home() {
       </section>
 <hr></hr>
 
-<section className="grid grid-cols-1 sm:grid-cols-3 pt-24 pb-24 h-fit w-full bg-black">
+<section className="grid grid-cols-1 sm:grid-cols-3  pt-24 pb-24 h-fit w-full bg-black">
   {/* Email */}
   <div className="flex flex-col items-center text-center space-y-4">
     <a href="mailto:sales@bostexintl.com" className="flex flex-col items-center space-y-4">
