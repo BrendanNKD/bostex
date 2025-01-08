@@ -1,10 +1,13 @@
 "use client"
 
-import IconText from "@/components/home/article";
+import IconText from "@/components/home/services";
+import { FaEnvelope, FaPhone, FaMapMarkerAlt } from "react-icons/fa";
 import content from '../constant/content.json'
 import Reveal from "@/components/animate/reveal";
 import Footer from "@/components/footer";
 import Image from "next/image";
+import ImgText from "@/components/home/industries";
+import Link from "next/link";
 export default function Home() {
   return (
     <>
@@ -23,118 +26,199 @@ export default function Home() {
 
         {/* Content Overlay */}
         <div className="relative z-10 flex items-center justify-center h-full w-full bg-black bg-opacity-50">
-          <div className="gap-4 w-full max-w-screen-xl text-white p-4 text-center">
-            <div className="flex flex-col">
-              <h1>Catch phrase</h1>
-              <p className="text-7xl">One-stop access control</p>
+          <div className="gap-4 w-full max-w-screen-xl text-white text-center">
+            <div className="flex flex-col gap-6">
+              <h1 className="text-white text-2xl md:text-4xl lg:text-6xl font-bold leading-tight">Innovate today, Secure Tomorrow</h1>
+
               <div className="flex justify-center gap-4 mt-4">
-                <button className="px-6 py-2 border border-white text-white rounded-full hover:bg-white hover:text-black transition">
+                {/* <button className="px-6 py-2 border border-white text-white rounded-full hover:bg-white hover:text-black transition">
                   Learn More
-                </button>
-                <button className="px-6 py-2 border border-white text-white rounded-full hover:bg-white hover:text-black transition">
-                  About us
-                </button>
+                </button> */}
+                <Link className="px-6 py-2 border border-white text-white rounded-full hover:bg-white hover:text-black transition inline-block" href="/comingsoon" passHref>
+                        About Us 
+                </Link>
               </div>
             </div>
           </div>
-
-        </div>
-
-      </section>
-
-      <hr></hr>
-
-
-      <section className="flex h-fit md:h-screen w-full bg-black px-6 md:px-12 lg:px-24 relative justify-center items-center">
-        <div className="flex flex-col w-full pt-12 md:pt-24">
-          {/* Top Left Logo */}
-          <div className="text-white mb-16 md:mb-28">
-            <h1 className="text-lg md:text-xl font-bold">Bostex</h1>
-          </div>
-
-          {/* Centered Heading with Typing Animation */}
-          <div className="flex flex-col items-start text-center md:text-left">
-            <h1 className="text-white text-2xl md:text-4xl lg:text-6xl font-bold leading-tight">
-              <span className="inline-block overflow-hidden whitespace-nowrap border-r-2 border-white animate-typing">
-                Innovate today, Secure Tomorrow
-              </span>
-            </h1>
-            <button className="mt-4 px-6 md:px-8 py-2 md:py-3 border border-white text-white text-xs md:text-sm font-medium hover:bg-white hover:text-black transition">
-              {"Secure your future today!"}
-            </button>
-          </div>
-
-          {/* Bottom Right Contact */}
-          <div className="mt-8 md:mt-16 flex justify-center md:justify-end text-white px-4">
-            <p className="text-xs md:text-sm text-center md:text-right">
-              Really excited to get in touch with us? <br />
-              Send us an email at hello@reallygreatsite.com. <br />
-            </p>
-          </div>
         </div>
       </section>
 
-
-      <hr></hr>
-
-      {/* services section overview */}
-      <section className="flex h-fit lg:h-screen w-full bg-black bg-[url('/assets/homepage/images/1.png')] bg-cover bg-center px-6 md:px-12 lg:px-24 justify-center items-center pt-12 lg:pt-0">
-        <div className="relative z-10 w-full text-white">
-          <div className="flex flex-col items-center justify-center text-center space-y-6 px-4">
-            <Reveal>
-              <h5 className="text-lg md:text-xl lg:text-2xl font-semibold">
-                {content.home.services.title.split(" ").slice(0, -3).join(" ")}{" "}
-                <span className="text-blue-500">
-                  {content.home.services.title.split(" ").slice(-3).join(" ")}
-                </span>
-              </h5>
-            </Reveal>
-            <Reveal>
-              <p className="text-sm md:text-base leading-relaxed w-full max-w-5xl mx-auto">
-                {content.home.services.description}
-              </p>
-            </Reveal>
-          </div>
-          <div className="mt-8">
-            <IconText content={content.home.services.article} />
-          </div>
-        </div>
-      </section>
-
-
-
-      <hr></hr>
-
-      <section className="flex h-screen w-full bg-black px-24 justify-center items-center">
-        <div className="relative z-10 flex items-center w-full bg-black text-white">
-          <div className="grid grid-cols-2 gap-4 w-full py-4">
-            <div className="flex flex-col justify-center">
-              <div className="pt-4 pr-4 pb-4 pl-0">
-                <div className="pb-10">
-                  <h1 className="text-xl primary">Bostex: Your Trusted Access Control Experts</h1>
-                </div>
-                <p className="text-sm secondary">
-                  At Bostex, we specialize in delivering cutting-edge access control solutions tailored to your unique security needs. From advanced biometric systems to cloud-based management platforms, our innovative technologies ensure seamless and secure access for businesses of all sizes.
-                </p>
-              </div>
-              <hr />
-              <div className="flex justify-between pt-4">
-                <p className="text-sm text-left">About Us</p>
-              </div>
-            </div>
-            <div className="flex justify-center items-center">
+      <section className="relative h-fit w-full bg-black overflow-hidden">
+        {/* Rows */}
+        <div className="container mx-auto pb-24 px-6 md:px-12 pt-48 md:pb-48 lg:pb-96 space-y-48">
+          {/* Row 0 */}
+          <div className="relative flex flex-col lg:flex-row items-center lg:items-center space-y-6 lg:space-y-0 lg:space-x-12 text-white">
+            {/* Glow Effect */}
+            <div className="absolute w-[300px] h-[300px] bg-gradient-to-r from-purple-500 to-pink-500 blur-[150px] opacity-50 animate-circle lg:right-10 lg:top-1/2 transform lg:-translate-y-1/2"></div>
+            <div className="hidden lg:block">
               <Image
-                src="/assets/homepage/videos/lockgif.gif"
-                alt="Access Control GIF"
-                width={300} // Set appropriate width
-                height={300} // Set appropriate height
-                priority // Optional: preload image for faster LCP
-                unoptimized // Disable optimization for animated GIF
+                src="/assets/homepage/images/svg1.png"
+                alt="service article"
+                width={600}
+                height={800}
+                className="rounded-[25px] w-auto h-auto"
               />
             </div>
+
+          
+            <div className="block lg:hidden">
+              <Image
+                src="/assets/homepage/images/mobile-service.png"
+                alt="service article"
+                width={600}
+                height={400}
+                className="rounded-[25px] w-auto h-auto"
+              />
+            </div>
+            <div className="flex flex-col w-full">
+              <div className="px-4 md:px-10">
+                <Reveal>
+                  <h5 className="text-lg md:text-xl lg:text-2xl font-semibold text-center lg:text-left">
+                    {content.home.services.title.split(" ").slice(0, -3).join(" ")}{" "}
+                    <span className="text-blue-500">
+                      {content.home.services.title.split(" ").slice(-3).join(" ")}
+                    </span>
+                  </h5>
+                </Reveal>
+                <Reveal>
+                  <p className="text-sm md:text-base leading-relaxed w-full max-w-3xl mx-auto lg:mx-0 lg:text-left">
+                    {content.home.services.description}
+                  </p>
+                </Reveal>
+              </div>
+              <div className="flex justify-center lg:justify-start mt-4">
+                <IconText content={content.home.services.article} />
+              </div>
+            </div>
+          </div>
+
+          {/* Row 1 */}
+          <div className="relative flex flex-col lg:flex-row items-center lg:items-center space-y-6 lg:space-y-0 lg:space-x-12">
+            {/* Glow Effect */}
+            <div className="absolute w-[300px] h-[300px] bg-gradient-to-r from-blue-500 to-teal-500 blur-[150px] opacity-50 animate-circle lg:left-10 lg:top-1/2 transform lg:-translate-y-1/2"></div>
+            {/* Text Content */}
+            <div className="relative z-10 flex flex-col text-white text-center lg:text-left max-w-3xl">
+              <h5 className="text-xl md:text-3xl lg:text-4xl font-bold leading-tight tracking-wide">
+                Integrated Security Management
+              </h5>
+              <p className="text-sm md:text-base lg:text-lg leading-relaxed mt-4">
+                Bostex Enteprise platform run on Windows Operating System adopted the latest .NET platform, MSMQ message queue technology, multi-layer centralize data exchange architecture and SQL Database.
+              </p>
+            </div>
+            {/* Image */}
+            <Image
+              src="/assets/homepage/images/services5.png"
+              alt="service article"
+              width={350}
+              height={400}
+              className="rounded-[25px] w-auto h-auto"
+            />
+          </div>
+
+          {/* Row 2 */}
+          <div className="relative flex flex-col lg:flex-row-reverse items-center lg:items-center space-y-6 lg:space-y-0 lg:space-x-12">
+            {/* Glow Effect */}
+            <div className="absolute w-[300px] h-[300px] bg-gradient-to-r from-purple-500 to-pink-500 blur-[150px] opacity-50 animate-circle lg:right-10 lg:top-1/2 transform lg:-translate-y-1/2"></div>
+            {/* Text Content */}
+            <div className="relative z-10 flex flex-col text-white text-center lg:text-left max-w-3xl">
+              <h5 className="text-xl md:text-3xl lg:text-4xl font-bold leading-tight tracking-wide">
+                Access Control Devices
+              </h5>
+              <p className="text-sm md:text-base lg:text-lg leading-relaxed mt-4">
+                Bostex Technologies International stands out in security hardware manufacturing through its commitment to precision engineering, durability, and innovation.
+              </p>
+            </div>
+            {/* Image */}
+            <Image
+              src="/assets/homepage/images/services6.png"
+              alt="service article"
+              width={300}
+              height={400}
+              className="rounded-[25px] w-auto h-auto"
+            />
+          </div>
+
+          {/* Row 3 */}
+          <div className="relative flex flex-col lg:flex-row items-center lg:items-center space-y-6 lg:space-y-0 lg:space-x-12">
+            {/* Glow Effect */}
+            <div className="absolute w-[300px] h-[300px] bg-gradient-to-r from-green-500 to-yellow-500 blur-[150px] opacity-50 animate-circle lg:left-10 lg:top-1/2 transform lg:-translate-y-1/2"></div>
+            {/* Text Content */}
+            <div className="relative z-10 flex flex-col text-white text-center lg:text-left max-w-3xl">
+              <h5 className="text-xl md:text-3xl lg:text-4xl font-bold leading-tight tracking-wide">
+                CCTV and Intrusion Detection System Integration
+              </h5>
+              <p className="text-sm md:text-base lg:text-lg leading-relaxed mt-4">
+                Integrate advanced CCTV surveillance and intrusion detection systems for a unified security solution. Monitor, record, and respond to incidents in real time, enhancing situational awareness and incident management.
+              </p>
+            </div>
+            {/* Image */}
+            <Image
+              src="/assets/homepage/images/services7.jpeg"
+              alt="service article"
+              width={350}
+              height={600}
+            className="rounded-[25px] w-auto h-auto"
+            />
           </div>
         </div>
+
       </section>
+
+      <section className="flex h-fit w-full bg-black bg-cover bg-center justify-center items-center">
+        
+        <div className="flex flex-col items-center text-center pb-24">
+              {/* Glow Effect */}
+          <div className="absolute w-[300px] h-[300px] bg-gradient-to-r from-purple-500 to-pink-500 blur-[150px] opacity-50 animate-circle lg:right-10 lg:top-1/2 transform lg:-translate-y-1/2"></div>
+          <Reveal>
+            <h5 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white tracking-wide leading-snug">
+              {content.home.industries.title}
+            </h5>
+          </Reveal>
+          <ImgText content={content.home.industries.article}></ImgText>
+      
+        </div>
+      </section>
+<hr></hr>
+
+<section className="grid grid-cols-1 sm:grid-cols-3 pt-24 pb-24 h-fit w-full bg-black">
+  {/* Email */}
+  <div className="flex flex-col items-center text-center space-y-4">
+    <a href="mailto:sales@bostexintl.com" className="flex flex-col items-center space-y-4">
+      <div className="flex items-center justify-center w-16 h-16 bg-white rounded-full">
+        <FaEnvelope className="text-black w-8 h-8" />
+      </div>
+      <h3 className="text-lg font-semibold text-white">Email Us</h3>
+      <p className="text-gray-300 underline">sales@bostexintl.com</p>
+    </a>
+  </div>
+  
+  {/* Phone Number */}
+  <div className="flex flex-col items-center text-center space-y-4">
+    <a href="tel:+6580820023" className="flex flex-col items-center space-y-4">
+      <div className="flex items-center justify-center w-16 h-16 bg-white rounded-full">
+        <FaPhone className="text-black w-8 h-8" />
+      </div>
+      <h3 className="text-lg font-semibold text-white">Call Us</h3>
+      <p className="text-gray-300 underline">+65 8082 0023</p>
+    </a>
+  </div>
+  
+  {/* Location */}
+  <div className="flex flex-col items-center text-center space-y-4">
+    <a
+      href="https://www.google.com/maps?q=514+Chai+Chee+Ln,+%2303-04,+Singapore+469029"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="flex flex-col items-center space-y-4"
+    >
+      <div className="flex items-center justify-center w-16 h-16 bg-white rounded-full">
+        <FaMapMarkerAlt className="text-black w-8 h-8" />
+      </div>
+      <h3 className="text-lg font-semibold text-white">Visit Us</h3>
+      <p className="text-gray-300 underline">514 Chai Chee Ln, #03-04, Singapore 469029</p>
+    </a>
+  </div>
+</section>
 
       <hr></hr>
       <Footer></Footer>

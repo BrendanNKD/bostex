@@ -26,13 +26,19 @@ export function NavigationMenuDemo() {
 
   return (
     <nav className="absolute top-0 left-0 w-full p-4 z-50">
-      <div className="relative flex items-center justify-between bg-gray-100 bg-opacity-20 backdrop-blur-md px-10 py-2 rounded-lg shadow-lg">
+      <div className="relative flex items-center justify-between bg-white backdrop-blur-md px-10 py-2 rounded-lg shadow-lg">
 
         {/* Logo - Visible on larger screens only */}
         <div className="flex items-center">
-          <Image src="/assets/shared/logo/bostex.png" alt="Logo"
-            width={150}
-            height={150} />
+          <Link href="/" passHref>
+            <Image
+              src="/assets/shared/logo/bostex.png"
+              alt="Logo"
+              width={100}
+              height={150}
+              className="w-auto h-auto cursor-pointer"
+            />
+          </Link>
         </div>
 
         {/* Mobile Menu Toggle Button */}
@@ -44,7 +50,7 @@ export function NavigationMenuDemo() {
               setOpen(!open);
             }
           }}
-          className="ml-auto block lg:hidden p-2 text-white focus:outline-none"
+          className="ml-auto block lg:hidden p-2 text-black focus:outline-none"
         >
           <svg
             className="w-6 h-6"
@@ -65,8 +71,8 @@ export function NavigationMenuDemo() {
         {/* Navigation Menu */}
         <NavigationMenu className={cn("hidden lg:flex")}>
           <NavigationMenuList className="flex flex-col lg:flex-row">
-            <NavigationMenuItem>
-              <NavigationMenuTrigger className="text-white">Solutions</NavigationMenuTrigger>
+            {/* <NavigationMenuItem>
+              <NavigationMenuTrigger className="text-black">Solutions</NavigationMenuTrigger>
               <NavigationMenuContent>
                 <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr] bg-white bg-opacity-90">
                   <li className="row-span-3">
@@ -94,10 +100,23 @@ export function NavigationMenuDemo() {
                   </ListItem>
                 </ul>
               </NavigationMenuContent>
-            </NavigationMenuItem>
+            </NavigationMenuItem> */}
 
-            <NavigationMenuItem className={cn("bg-transparent")}>
-              <NavigationMenuTrigger className="text-white">Products</NavigationMenuTrigger>
+            {/* <NavigationMenuItem className={cn("bg-transparent")}>
+              <NavigationMenuTrigger className="text-black">Products</NavigationMenuTrigger>
+              <NavigationMenuContent >
+                <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] bg-black bg-opacity-90">
+                  {components.map((component) => (
+                    <ListItem key={component.title} title={component.title} href={component.href}>
+                      {component.description}
+                    </ListItem>
+                  ))}
+                </ul>
+              </NavigationMenuContent>
+            </NavigationMenuItem> */}
+
+            {/* <NavigationMenuItem>
+              <NavigationMenuTrigger className="text-black">Industries</NavigationMenuTrigger>
               <NavigationMenuContent>
                 <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] bg-white bg-opacity-90">
                   {components.map((component) => (
@@ -107,36 +126,39 @@ export function NavigationMenuDemo() {
                   ))}
                 </ul>
               </NavigationMenuContent>
-            </NavigationMenuItem>
+            </NavigationMenuItem> */}
 
             <NavigationMenuItem>
-              <NavigationMenuTrigger className="text-white">Industries</NavigationMenuTrigger>
-              <NavigationMenuContent>
-                <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] bg-white bg-opacity-90">
-                  {components.map((component) => (
-                    <ListItem key={component.title} title={component.title} href={component.href}>
-                      {component.description}
-                    </ListItem>
-                  ))}
-                </ul>
-              </NavigationMenuContent>
+              <Link href="/comingsoon" legacyBehavior passHref>
+                <NavigationMenuLink className={`${navigationMenuTriggerStyle()} text-black`}>Solutions</NavigationMenuLink>
+              </Link>
             </NavigationMenuItem>
-
             <NavigationMenuItem>
-              <Link href="/docs" legacyBehavior passHref>
-                <NavigationMenuLink className={`${navigationMenuTriggerStyle()} text-white`}>Partners</NavigationMenuLink>
+              <Link href="/comingsoon" legacyBehavior passHref>
+                <NavigationMenuLink className={`${navigationMenuTriggerStyle()} text-black`}>Products</NavigationMenuLink>
+              </Link>
+            </NavigationMenuItem>
+            <NavigationMenuItem>
+              <Link href="/comingsoon" legacyBehavior passHref>
+                <NavigationMenuLink className={`${navigationMenuTriggerStyle()} text-black`}>Industries</NavigationMenuLink>
               </Link>
             </NavigationMenuItem>
 
             <NavigationMenuItem>
-              <Link href="/" legacyBehavior passHref>
-                <NavigationMenuLink className={`${navigationMenuTriggerStyle()} text-white`}>About us</NavigationMenuLink>
+              <Link href="/comingsoon" legacyBehavior passHref>
+                <NavigationMenuLink className={`${navigationMenuTriggerStyle()} text-black`}>Partners</NavigationMenuLink>
               </Link>
             </NavigationMenuItem>
 
             <NavigationMenuItem>
-              <Link href="/products" legacyBehavior passHref>
-                <NavigationMenuLink className={`${navigationMenuTriggerStyle()} text-white`}>Contact us</NavigationMenuLink>
+              <Link href="/comingsoon" legacyBehavior passHref>
+                <NavigationMenuLink className={`${navigationMenuTriggerStyle()} text-black`}>About Us</NavigationMenuLink>
+              </Link>
+            </NavigationMenuItem>
+
+            <NavigationMenuItem>
+              <Link href="/comingsoon" legacyBehavior passHref>
+                <NavigationMenuLink className={`${navigationMenuTriggerStyle()} text-black`}>Contact Us</NavigationMenuLink>
               </Link>
             </NavigationMenuItem>
           </NavigationMenuList>

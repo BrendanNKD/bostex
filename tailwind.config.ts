@@ -18,11 +18,27 @@ const config: Config = {
 			},
 			blink: {
 				"50%": { borderColor: "transparent" },
-				},
+			},
+			glow: {
+				"0%": { transform: "translate(0, 0)" },
+				"25%": { transform: "translate(10px, 10px)" },
+				"50%": { transform: "translate(0, 20px)" },
+				"75%": { transform: "translate(-10px, 10px)" },
+				"100%": { transform: "translate(0, 0)" },
+			  },
+			circle: {
+			"0%": { transform: "translate(0, 0)" },
+			"25%": { transform: "translate(20px, 10px)" },
+			"50%": { transform: "translate(0px, 20px)" },
+			"75%": { transform: "translate(-20px, 10px)" },
+			"100%": { transform: "translate(0, 0)" },
+			},
 		},
 		animation: {
 			typing: "typing 6s steps(40, end) infinite",
 			blink: "blink 0.6s step-end infinite",
+			glow: "glow 6s ease-in-out infinite",
+			circle: "circle 10s ease-in-out infinite", // Slower animation
 		},
   		colors: {
   			background: 'hsl(var(--background))',

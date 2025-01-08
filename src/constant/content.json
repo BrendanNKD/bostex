@@ -1,33 +1,71 @@
 {
     "home": {
-
-        "services": 
-        {
-            "title":"Take A Look At Services We Provide",
-            "description":"We specialize in delivering cutting-edge solutions for secure environments, smart infrastructure, and optimized technology. Based in Singapore, our expertise spans access control systems, cloud-based applications, and data center technologies.",
-            "article":     {
+        "services": {
+            "title": "Our Expertise, Your Safety",
+            "description": "We specialize in delivering cutting-edge solutions for secure environments, smart infrastructure, and optimized technology. Based in Singapore, our expertise spans access control systems, cloud-based applications, and data center technologies.",
+            "article": {
                 "title": "Services",
                 "desc": "The goal of web development is to create a functional, visually appealing, and user-friendly online presence.",
                 "data": [
                     {
                         "icon": "/assets/homepage/icons/services1.svg",
-                        "title": "Access Control System",
-                        "desc": "Enhance your security infrastructure with our advanced access control solutions, designed for reliability, scalability, and ease of use."
+                        "title": "Customized Security Solutions",
+                        "desc": "Tailored solutions for your unique requirements. "
                     },
                     {
                         "icon": "/assets/homepage/icons/services2.svg",
-                        "title": "Custom Technology Development",
-                        "desc": "Tailored solutions for your unique requirements. From conceptualization to deployment, we bring your ideas to life."
+                        "title": "Access Control System",
+                        "desc": "Enhance your security with our access control systems."
                     },
                     {
                         "icon": "/assets/homepage/icons/services3.svg",
-                        "title": "System Integration",
-                        "desc": "Seamlessly integrate our solutions with other security system.  This includes integrating with CCTV surveillance systems, lift destination control systems and intrusion detection."
+                        "title": "Integrated Security Solution",
+                        "desc": "Seamless Integration with other security systems."
+                    },
+                    {
+                        "icon": "/assets/homepage/icons/services4.svg",
+                        "title": "User Training Programs",
+                        "desc": "Get trained through our education programs."
+                    }
+                ]
+            }
+        },
+        "industries": {
+            "title": "Market Segments",
+            "article": {
+                "data": [
+                    {
+                        "image": "/assets/homepage/images/indus1.png",
+                        "title": "Aviation",
+                        "desc": "Elevating aviation security with innovative technology."
+                    },
+                    {
+                        "image": "/assets/homepage/images/indus2.png",
+                        "title": "Data Centers",
+                        "desc": "Protecting critical data with cutting-edge security solutions."
+                    },
+                    {
+                        "image": "/assets/homepage/images/indus3.png",
+                        "title": "Government Agency",
+                        "desc": "Empowering agencies with reliable and secure systems."
+                    },
+                    {
+                        "image": "/assets/homepage/images/indus4.png",
+                        "title": "Health Care",
+                        "desc": "Securing healthcare facilities for uninterrupted care."
+                    },
+                    {
+                        "image": "/assets/homepage/images/indus5.png",
+                        "title": "Commercial",
+                        "desc": "Optimizing security for diverse commercial spaces."
+                    },
+                    {
+                        "image": "/assets/homepage/images/indus6.png",
+                        "title": "Institution - Education",
+                        "desc": "Enhancing safety and security for educational institutions."
                     }
                 ]
             }
         }
-
-
     }
 }
