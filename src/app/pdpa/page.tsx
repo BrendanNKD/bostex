@@ -63,25 +63,25 @@ const PDPA: React.FC = () => {
                     <p className="mt-4">
                         Please visit the following link to reach out to us for any query:
                     </p>
-                    <a
+                    <Link
                         href="https://www.resguard-solutions.com/portal/dpo/dashboard/0187f8c52476880e15209879e15085a1"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-primary underline"
+                        className="text-white underline"
                     >
                         https://www.resguard-solutions.com/portal/dpo/dashboard/0187f8c52476880e15209879e15085a1
-                    </a>
+                    </Link>
                     <p className="mt-4">
                         You also have the right to make a complaint at any time to the Personal Data
                         Protection Commission in Singapore (
-                        <a
+                        <Link
                             href="https://www.pdpc.gov.sg"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-primary underline"
+                            className="text-white underline"
                         >
                             www.pdpc.gov.sg
-                        </a>
+                        </Link>
                         ). We would appreciate the chance to deal with your concerns before you approach
                         any information commissioner authority, so please contact us in the first instance.
                     </p>
