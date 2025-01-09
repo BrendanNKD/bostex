@@ -2,7 +2,7 @@
     "home": {
         "services": {
             "title": "Our Expertise, Your Safety",
-            "description": "We specialize in delivering cutting-edge solutions for secure environments, smart infrastructure, and optimized technology. Based in Singapore, our expertise spans access control systems, cloud-based applications, and data center technologies.",
+            "description": "We specialise in delivering cutting-edge solutions to secure your assets in both manageable and challenging security settings, integrate with smart infrastructure, and optimise technology for high availability. Based in Singapore, given our strong foothold in physical access control system, our expertise spans both hardware and software applications that support the day-to-day security operations at Bostex-secured sites across the globe.",
             "article": {
                 "title": "Services",
                 "desc": "The goal of web development is to create a functional, visually appealing, and user-friendly online presence.",
@@ -14,18 +14,18 @@
                     },
                     {
                         "icon": "/assets/homepage/icons/services2.svg",
-                        "title": "Access Control System",
-                        "desc": "Enhance your security with our access control systems."
+                        "title": "Physical Access Control System (PACS)",
+                        "desc": "Enhance your asset security with our physical access control system."
                     },
                     {
                         "icon": "/assets/homepage/icons/services3.svg",
                         "title": "Integrated Security Solution",
-                        "desc": "Seamless Integration with other security systems."
+                        "desc": "Integrate PACS with other security systems for a unified platform."
                     },
                     {
                         "icon": "/assets/homepage/icons/services4.svg",
-                        "title": "User Training Programs",
-                        "desc": "Get trained through our education programs."
+                        "title": "Partner Training Programme",
+                        "desc": "Become proficient at our PACS products through our partner training program."
                     }
                 ]
             }
@@ -57,7 +57,7 @@
                     {
                         "image": "/assets/homepage/images/indus5.png",
                         "title": "Commercial",
-                        "desc": "Optimizing security for diverse commercial spaces."
+                        "desc": "Optimising security for diverse commercial spaces."
                     },
                     {
                         "image": "/assets/homepage/images/indus6.png",

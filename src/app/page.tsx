@@ -7,7 +7,7 @@ import Reveal from "@/components/animate/reveal";
 import Footer from "@/components/footer";
 import Image from "next/image";
 import ImgText from "@/components/home/industries";
-import Link from "next/link";
+import ButtonLink from "@/components/shared/buttons/primary";
 export default function Home() {
   return (
     <>
@@ -28,15 +28,17 @@ export default function Home() {
         <div className="relative z-10 flex items-center justify-center h-full w-full bg-black bg-opacity-50">
           <div className="gap-4 w-full max-w-screen-xl text-white text-center">
             <div className="flex flex-col gap-6">
-              <h1 className="text-white text-2xl md:text-4xl lg:text-6xl font-bold leading-tight">Innovate today, Secure Tomorrow</h1>
+              <h1 className="text-white text-2xl md:text-4xl lg:text-6xl font-bold leading-tight">Innovate Today, Secure Tomorrow</h1>
 
               <div className="flex justify-center gap-4 mt-4">
                 {/* <button className="px-6 py-2 border border-white text-white rounded-full hover:bg-white hover:text-black transition">
                   Learn More
                 </button> */}
-                <Link className="px-6 py-2 border border-white text-white rounded-full hover:bg-white hover:text-black transition inline-block" href="/comingsoon" passHref>
-                        About Us 
-                </Link>
+                <ButtonLink
+                  href="/comingsoon"
+                >
+                  About Us
+                </ButtonLink>
               </div>
             </div>
           </div>
@@ -49,7 +51,7 @@ export default function Home() {
           {/* Row 0 */}
           <div className="relative flex flex-col lg:flex-row items-center lg:items-center space-y-6 lg:space-y-0 lg:space-x-12 text-white">
             {/* Glow Effect */}
-            <div className="absolute w-[300px] h-[300px] bg-gradient-to-r from-purple-500 to-pink-500 blur-[150px] opacity-50 animate-circle lg:right-10 lg:top-1/2 transform lg:-translate-y-1/2"></div>
+            <div className="absolute w-[300px] h-[300px] bg-gradient-to-r from-blue-500 to-teal-500 blur-[150px] opacity-50 animate-circle lg:right-10 lg:top-1/2 transform lg:-translate-y-1/2"></div>
             <div className="hidden lg:block">
               <Image
                 src="/assets/homepage/images/svg1.png"
@@ -60,7 +62,7 @@ export default function Home() {
               />
             </div>
 
-          
+
             <div className="block lg:hidden">
               <Image
                 src="/assets/homepage/images/mobile-service.png"
@@ -74,11 +76,22 @@ export default function Home() {
               <div className="px-4 md:px-10">
                 <Reveal>
                   <h5 className="text-lg md:text-xl lg:text-2xl font-semibold text-center lg:text-left">
-                    {content.home.services.title.split(" ").slice(0, -3).join(" ")}{" "}
-                    <span className="text-blue-500">
-                      {content.home.services.title.split(" ").slice(-3).join(" ")}
-                    </span>
+                    {content.home.services.title
+                      .split(" ")
+                      .map((word, idx) => {
+                        // Highlight the 2nd (index === 1) and 4th (index === 3) words
+                        if (idx === 1 || idx === 3) {
+                          return (
+                            <span key={idx} className="text-blue-500">
+                              {word}{" "}
+                            </span>
+                          );
+                        }
+                        // Regular text for everything else
+                        return <span key={idx}>{word} </span>;
+                      })}
                   </h5>
+
                 </Reveal>
                 <Reveal>
                   <p className="text-sm md:text-base leading-relaxed w-full max-w-3xl mx-auto lg:mx-0 lg:text-left">
@@ -95,14 +108,14 @@ export default function Home() {
           {/* Row 1 */}
           <div className="relative flex flex-col lg:flex-row items-center lg:items-center space-y-6 lg:space-y-0 lg:space-x-12">
             {/* Glow Effect */}
-            <div className="absolute w-[300px] h-[300px] bg-gradient-to-r from-blue-500 to-teal-500 blur-[150px] opacity-50 animate-circle lg:left-10 lg:top-1/2 transform lg:-translate-y-1/2"></div>
+            <div className="absolute w-[300px] h-[300px] bg-gradient-to-r from-teal-500 to-blue-500 blur-[150px] opacity-50 animate-circle lg:left-10 lg:top-1/2 transform lg:-translate-y-1/2"></div>
             {/* Text Content */}
             <div className="relative z-10 flex flex-col text-white text-center lg:text-left max-w-3xl">
               <h5 className="text-xl md:text-3xl lg:text-4xl font-bold leading-tight tracking-wide">
-                Integrated Security Management
+                One Core Application Suite To Rule It All
               </h5>
               <p className="text-sm md:text-base lg:text-lg leading-relaxed mt-4">
-                Bostex Enteprise platform run on Windows Operating System adopted the latest .NET platform, MSMQ message queue technology, multi-layer centralize data exchange architecture and SQL Database.
+                Bostex Enterprise Platform for Security (BTEPS) runs on Microsoft Windows Operating System; adopts Microsoft .NET framework, Microsoft message queue (MSMQ) technology, Microsoft SQL relational database, and supports both single-tier and multi-tier architecture.
               </p>
             </div>
             {/* Image */}
@@ -118,14 +131,14 @@ export default function Home() {
           {/* Row 2 */}
           <div className="relative flex flex-col lg:flex-row-reverse items-center lg:items-center space-y-6 lg:space-y-0 lg:space-x-12">
             {/* Glow Effect */}
-            <div className="absolute w-[300px] h-[300px] bg-gradient-to-r from-purple-500 to-pink-500 blur-[150px] opacity-50 animate-circle lg:right-10 lg:top-1/2 transform lg:-translate-y-1/2"></div>
+            <div className="absolute w-[300px] h-[300px] bg-gradient-to-r from-blue-500 to-teal-500 blur-[150px] opacity-50 animate-circle lg:right-10 lg:top-1/2 transform lg:-translate-y-1/2"></div>
             {/* Text Content */}
             <div className="relative z-10 flex flex-col text-white text-center lg:text-left max-w-3xl">
               <h5 className="text-xl md:text-3xl lg:text-4xl font-bold leading-tight tracking-wide">
-                Access Control Devices
+                Quality PACS Hardware and Software
               </h5>
               <p className="text-sm md:text-base lg:text-lg leading-relaxed mt-4">
-                Bostex Technologies International stands out in security hardware manufacturing through its commitment to precision engineering, durability, and innovation.
+                Bostex Technologies stands out in physical security products through its high-quality manufacturing and unwavering commitment in engineering, durability, and innovation.
               </p>
             </div>
             {/* Image */}
@@ -141,14 +154,14 @@ export default function Home() {
           {/* Row 3 */}
           <div className="relative flex flex-col lg:flex-row items-center lg:items-center space-y-6 lg:space-y-0 lg:space-x-12">
             {/* Glow Effect */}
-            <div className="absolute w-[300px] h-[300px] bg-gradient-to-r from-green-500 to-yellow-500 blur-[150px] opacity-50 animate-circle lg:left-10 lg:top-1/2 transform lg:-translate-y-1/2"></div>
+            <div className="absolute w-[300px] h-[300px] bg-gradient-to-r from-teal-500 to-blue-500 blur-[150px] opacity-50 animate-circle lg:left-10 lg:top-1/2 transform lg:-translate-y-1/2"></div>
             {/* Text Content */}
             <div className="relative z-10 flex flex-col text-white text-center lg:text-left max-w-3xl">
               <h5 className="text-xl md:text-3xl lg:text-4xl font-bold leading-tight tracking-wide">
-                CCTV and Intrusion Detection System Integration
+                Integration with 3rd Party Video Surveillance System and Intrusion Detection System
               </h5>
               <p className="text-sm md:text-base lg:text-lg leading-relaxed mt-4">
-                Integrate advanced CCTV surveillance and intrusion detection systems for a unified security solution. Monitor, record, and respond to incidents in real time, enhancing situational awareness and incident management.
+                Integrate CCTV surveillance system and intrusion detection system for a unified security solution. Monitor, record, and respond to incidents in real time, enhancing situational awareness and incident management.
               </p>
             </div>
             {/* Image */}
@@ -157,7 +170,7 @@ export default function Home() {
               alt="service article"
               width={350}
               height={600}
-            className="rounded-[25px] w-auto h-auto"
+              className="rounded-[25px] w-auto h-auto"
             />
           </div>
         </div>
@@ -165,61 +178,60 @@ export default function Home() {
       </section>
 
       <section className="flex h-fit w-full bg-black bg-cover bg-center justify-center items-center">
-        
+
         <div className="flex flex-col items-center text-center pb-24">
-              {/* Glow Effect */}
-          <div className="absolute w-[300px] h-[300px] bg-gradient-to-r from-purple-500 to-pink-500 blur-[150px] opacity-50 animate-circle lg:right-10 lg:top-1/2 transform lg:-translate-y-1/2"></div>
+          {/* Glow Effect */}
+
           <Reveal>
             <h5 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white tracking-wide leading-snug">
               {content.home.industries.title}
             </h5>
           </Reveal>
           <ImgText content={content.home.industries.article}></ImgText>
-      
+
         </div>
       </section>
-<hr></hr>
+      <hr></hr>
 
-<section className="grid grid-cols-1 sm:grid-cols-3  pt-24 pb-24 h-fit w-full bg-black">
-  {/* Email */}
-  <div className="flex flex-col items-center text-center space-y-4">
-    <a href="mailto:sales@bostexintl.com" className="flex flex-col items-center space-y-4">
-      <div className="flex items-center justify-center w-16 h-16 bg-white rounded-full">
-        <FaEnvelope className="text-black w-8 h-8" />
-      </div>
-      <h3 className="text-lg font-semibold text-white">Email Us</h3>
-      <p className="text-gray-300 underline">sales@bostexintl.com</p>
-    </a>
-  </div>
-  
-  {/* Phone Number */}
-  <div className="flex flex-col items-center text-center space-y-4">
-    <a href="tel:+6580820023" className="flex flex-col items-center space-y-4">
-      <div className="flex items-center justify-center w-16 h-16 bg-white rounded-full">
-        <FaPhone className="text-black w-8 h-8" />
-      </div>
-      <h3 className="text-lg font-semibold text-white">Call Us</h3>
-      <p className="text-gray-300 underline">+65 8082 0023</p>
-    </a>
-  </div>
-  
-  {/* Location */}
-  <div className="flex flex-col items-center text-center space-y-4">
-    <a
-      href="https://www.google.com/maps?q=514+Chai+Chee+Ln,+%2303-04,+Singapore+469029"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="flex flex-col items-center space-y-4"
-    >
-      <div className="flex items-center justify-center w-16 h-16 bg-white rounded-full">
-        <FaMapMarkerAlt className="text-black w-8 h-8" />
-      </div>
-      <h3 className="text-lg font-semibold text-white">Visit Us</h3>
-      <p className="text-gray-300 underline">514 Chai Chee Ln, #03-04, Singapore 469029</p>
-    </a>
-  </div>
-</section>
+      <section className="grid grid-cols-1 sm:grid-cols-3  pt-24 pb-24 h-fit w-full bg-black">
+        {/* Email */}
+        <div className="flex flex-col items-center text-center space-y-4">
+          <a href="mailto:sales@bostexintl.com" className="flex flex-col items-center space-y-4">
+            <div className="flex items-center justify-center w-16 h-16 bg-white rounded-full">
+              <FaEnvelope className="text-black w-8 h-8" />
+            </div>
+            <h3 className="text-lg font-semibold text-white">Email Us</h3>
+            <p className="text-gray-300 underline">helpdesk@bostexintl.com</p>
+          </a>
+        </div>
 
+        {/* Phone Number */}
+        <div className="flex flex-col items-center text-center space-y-4">
+          <a href="tel:+6580820023" className="flex flex-col items-center space-y-4">
+            <div className="flex items-center justify-center w-16 h-16 bg-white rounded-full">
+              <FaPhone className="text-black w-8 h-8" />
+            </div>
+            <h3 className="text-lg font-semibold text-white">Call Us</h3>
+            <p className="text-gray-300 underline">+65 6844 5675</p>
+          </a>
+        </div>
+
+        {/* Location */}
+        <div className="flex flex-col items-center text-center space-y-4">
+          <a
+            href="https://www.google.com/maps?q=514+Chai+Chee+Ln,+%2303-04,+Singapore+469029"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex flex-col items-center space-y-4"
+          >
+            <div className="flex items-center justify-center w-16 h-16 bg-white rounded-full">
+              <FaMapMarkerAlt className="text-black w-8 h-8" />
+            </div>
+            <h3 className="text-lg font-semibold text-white">Visit Us</h3>
+            <p className="text-gray-300 underline">514 Chai Chee Ln, #03-04, Singapore 469029</p>
+          </a>
+        </div>
+      </section>
       <hr></hr>
       <Footer></Footer>
     </>

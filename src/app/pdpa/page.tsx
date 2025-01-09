@@ -364,7 +364,7 @@ const PDPA: React.FC = () => {
                     <h2 className="text-2xl font-semibold text-white">Specific Information</h2>
 
                     {/* Subsection: Website */}
-                    <h3 className="text-xl font-semibold text-primary mt-8">Website</h3>
+                    {/* <h3 className="text-xl font-semibold text-white mt-8">Website</h3> */}
                     <p className="mt-4">
                         15. Every time a user visits our website, technical information of the user is collected
                         for the contributions to the subject of information security. Information (also referred to
@@ -389,7 +389,7 @@ const PDPA: React.FC = () => {
                     </p>
 
                     {/* Subsection: Cookies */}
-                    <h3 className="text-xl font-semibold text-primary mt-8">Cookies</h3>
+                    {/* <h3 className="text-xl font-semibold text-white mt-8">Cookies</h3> */}
                     <p className="mt-4">
                         16. Our website uses cookies. Cookies are text files that are stored on your computer by
                         the server. They contain information about the browser, the IP address, the operating system
@@ -403,7 +403,7 @@ const PDPA: React.FC = () => {
                     </p>
 
                     {/* Subsection: Integrating Third-Party Services and Content */}
-                    <h3 className="text-xl font-semibold text-primary mt-8">Integrating Third-Party Services and Content</h3>
+                    {/* <h3 className="text-xl font-semibold text-white mt-8">Integrating Third-Party Services and Content</h3> */}
                     <p className="mt-4">
                         17. Our range includes content, services and services from other suppliers. For example,
                         this might be videos, graphics or images from other websites. In order for this data to be
@@ -413,7 +413,7 @@ const PDPA: React.FC = () => {
                     </p>
 
                     {/* Subsection: Contact Form */}
-                    <h3 className="text-xl font-semibold text-primary mt-8">Contact Form</h3>
+                    {/* <h3 className="text-xl font-semibold text-white mt-8">Contact Form</h3> */}
                     <p className="mt-4">
                         18. If you contact us via the online contact form or by email, we will save the information
                         you provide, your IP address and the time it was sent. This allows us to answer your request
@@ -421,7 +421,7 @@ const PDPA: React.FC = () => {
                     </p>
 
                     {/* Subsection: Google Analytics */}
-                    <h3 className="text-xl font-semibold text-primary mt-8">Google Analytics</h3>
+                    {/* <h3 className="text-xl font-semibold text-white mt-8">Google Analytics</h3> */}
                     <p className="mt-4">
                         19. Our website or email service provider may use the standard analysis tool “Google
                         Analytics” of Google Inc. (short: “Google”). Google Analytics uses cookies (text files that

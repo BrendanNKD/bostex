@@ -21,7 +21,7 @@ interface IProps {
     }
 }
 import Reveal from '@/components/animate/reveal'
-import Link from 'next/link';
+import ButtonLink from '../shared/buttons/primary';
 
 const IconText = ({ content }: IProps) => {
     return (
@@ -50,9 +50,11 @@ const IconText = ({ content }: IProps) => {
                                 </CardDescription>
                             </CardContent>
                             <div className="p-4 flex">
-                                <Link className="px-6 py-2 border border-white text-white rounded-full hover:bg-white hover:text-black transition inline-block" href="/comingsoon" passHref>
-                                    Know More
-                                </Link>
+                                <ButtonLink
+                                    href="/comingsoon"
+                                >
+                                    More
+                                </ButtonLink>
                             </div>
                         </Card>
                     </Reveal>

@@ -5,8 +5,8 @@ import { motion } from "framer-motion";
 
 const variants = {
 	hidden: { opacity: 0, },
-	visible: { opacity: 1, y: 0, transition: { duration: 0.5, type: "easeIn" } },
-  exit: {opacity: 0, transition: { duration: 0.5, type: "easeIn" }}
+	visible: { opacity: 1, y: 0, transition: { duration: 1.5, type: "easeIn" } },
+  exit: {opacity: 0, transition: { duration: 1.5, type: "easeIn" }}
 };
 
 

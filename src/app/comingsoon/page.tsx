@@ -1,4 +1,6 @@
 "use client"
+import ButtonLink from "@/components/shared/buttons/primary";
+import Link from "next/link";
 import React from "react";
 
 const ComingSoon: React.FC = () => {
@@ -20,10 +22,21 @@ const ComingSoon: React.FC = () => {
                     >
                         Notify Me
                     </button> */}
+                    <div className="mb-8">
+                    <ButtonLink
+                        href="/"
+                    >
+                        Back
+                    </ButtonLink>
+                    </div>
                 </div>
-                <p className="text-sm text-gray-500">
-                    © {new Date().getFullYear()} Bostex Technologies. All Rights Reserved.
-                </p>
+                <span className="text-sm text-gray-500">
+                    © {new Date().getFullYear()}{" "}
+                    <Link href="/" className="hover:underline">
+                        Bostex™
+                    </Link>
+                    . All Rights Reserved.
+                </span>
             </div>
         </div>
     );
