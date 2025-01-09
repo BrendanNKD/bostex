@@ -22,7 +22,7 @@ const ComingSoon: React.FC = () => {
                     >
                         Notify Me
                     </button> */}
-                    <div className="mb-8">
+                    <div className="mb-8 relative z-10">
                     <ButtonLink
                         href="/"
                     >
