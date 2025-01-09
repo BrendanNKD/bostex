@@ -18,14 +18,14 @@ import { Calendar, Home, Inbox, Search, Settings } from "lucide-react"
 // Menu items.
 const items = [
   {
-    title: "Home",
-    url: "/",
-    icon: Home,
+    title: "Solution",
+    url: "/comingsoon",
+    icon: Inbox,
   },
   {
     title: "Products",
     url: "/comingsoon",
-    icon: Inbox,
+    icon: Calendar,
   },
   {
     title: "Industries",
@@ -35,12 +35,12 @@ const items = [
   {
     title: "Partners",
     url: "/comingsoon",
-    icon: Calendar,
+    icon: Search,
   },
   {
     title: "About Us",
     url: "/comingsoon",
-    icon: Search,
+    icon: Settings,
   },
   {
     title: "Contact Us",
@@ -52,9 +52,9 @@ const items = [
 export function AppSidebar() {
   return (
     <Sidebar>
-      <SidebarContent className="bg-black">
+      <SidebarContent className="bg-gray-900">
         <SidebarGroup>
-          <SidebarGroupLabel className="bg-white mb-6">
+          <SidebarGroupLabel className=" bg-white mb-6 rounded p-6">
             <Link href="/" passHref>
               <Image
                 src="/assets/shared/logo/bostex.png"
