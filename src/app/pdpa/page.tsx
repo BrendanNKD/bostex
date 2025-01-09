@@ -64,13 +64,13 @@ const PDPA: React.FC = () => {
                         Please visit the following link to reach out to us for any query:
                     </p>
                     <Link
-                        href="https://www.resguard-solutions.com/portal/dpo/dashboard/0187f8c52476880e15209879e15085a1"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-white underline"
-                    >
-                        https://www.resguard-solutions.com/portal/dpo/dashboard/0187f8c52476880e15209879e15085a1
-                    </Link>
+    href="https://www.resguard-solutions.com/portal/dpo/dashboard/0187f8c52476880e15209879e15085a1"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="text-white underline break-all overflow-hidden whitespace-normal"
+>
+    https://www.resguard-solutions.com/portal/dpo/dashboard/0187f8c52476880e15209879e15085a1
+</Link>
                     <p className="mt-4">
                         You also have the right to make a complaint at any time to the Personal Data
                         Protection Commission in Singapore (
