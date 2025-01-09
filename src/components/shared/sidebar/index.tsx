@@ -13,7 +13,7 @@ import {
 // import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "../../ui/collapsible"
 import Link from "next/link"
 import Image from "next/image"
-import { Calendar, Home, Inbox, Search, Settings } from "lucide-react"
+import { Calendar, Inbox, Search, Settings } from "lucide-react"
 
 // Menu items.
 const items = [
