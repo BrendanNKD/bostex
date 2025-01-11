@@ -10,7 +10,7 @@ const Footer = () => {
           <div className="border border-gray-700 p-4">
             <h3 className="text-gray-400 text-sm uppercase mb-4">About Us</h3>
             <ul className="space-y-2 text-sm">
-              {["Introduction", "Contact", "Careers", "Blog"].map((item, index) => (
+              {["Introduction", "Contact", "Careers", "Linkedin"].map((item, index) => (
                 <li key={index}>
                   <Link href="/comingsoon" className="hover:underline">
                     {item}
@@ -24,7 +24,7 @@ const Footer = () => {
           <div className="border border-gray-700 p-4">
             <h3 className="text-gray-400 text-sm uppercase mb-4">Solutions</h3>
             <ul className="space-y-2 text-sm">
-              {["Access Control", "Staff Attendance", "BMS Integration", "More Coming!"].map(
+              {["Access Control", "Smart Locks", "Racks Management"].map(
                 (item, index) => (
                   <li key={index}>
                     <Link href="/comingsoon" className="hover:underline">

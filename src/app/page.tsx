@@ -115,7 +115,7 @@ export default function Home() {
                 One Core Application Suite To Rule It All
               </h5>
               <p className="text-sm md:text-base lg:text-lg leading-relaxed mt-4">
-                Bostex Enterprise Platform for Security (BTEPS) runs on Microsoft Windows Operating System; adopts Microsoft .NET framework, Microsoft message queue (MSMQ) technology, Microsoft SQL relational database, and supports both single-tier and multi-tier architecture.
+              <span className="text-blue-500">B</span>osTex  <span className="text-blue-500">E</span>nterprise  <span className="text-blue-500">P</span>latform for <span className="text-blue-500">S</span>ecurity (BTEPS) provide comprehensive physical security solution designed with advanced threat detection, prevention, and response capabilities.
               </p>
             </div>
             {/* Image */}
@@ -178,12 +178,11 @@ export default function Home() {
       </section>
 
       <section className="flex h-fit w-full bg-black bg-cover bg-center justify-center items-center">
-
         <div className="flex flex-col items-center text-center pb-24">
           {/* Glow Effect */}
 
           <Reveal>
-            <h5 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white tracking-wide leading-snug">
+            <h5 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white tracking-wide leading-snug p-6">
               {content.home.industries.title}
             </h5>
           </Reveal>
@@ -193,7 +192,7 @@ export default function Home() {
       </section>
       <hr></hr>
 
-      <section className="grid grid-cols-1 sm:grid-cols-3  pt-24 pb-24 h-fit w-full bg-black">
+      <section id="contact" className="grid grid-cols-1 sm:grid-cols-3  pt-24 pb-24 h-fit w-full bg-black">
         {/* Email */}
         <div className="flex flex-col items-center text-center space-y-4">
           <a href="mailto:sales@bostexintl.com" className="flex flex-col items-center space-y-4">
@@ -201,6 +200,7 @@ export default function Home() {
               <FaEnvelope className="text-black w-8 h-8" />
             </div>
             <h3 className="text-lg font-semibold text-white">Email Us</h3>
+            <p className="text-gray-300 underline">sales@bostexintl.com</p>
             <p className="text-gray-300 underline">helpdesk@bostexintl.com</p>
           </a>
         </div>

@@ -20,7 +20,7 @@ const PDPA: React.FC = () => {
                     <h2 className="text-2xl font-semibold text-white">Introduction</h2>
                     <p className="mt-4">
                         This Data Protection Notice (“Notice”) sets out the basis which Bostex
-                        Technologies International Pte Ltd(“Bostex”) may collect, use, disclose or
+                        Technologies International Pte Ltd (“Bostex”) may collect, use, disclose or
                         otherwise process personal data in accordance with the Personal Data Protection Act
                         (“PDPA”). This notice applies to personal data in our possession or under our
                         control, including:

@@ -40,6 +40,9 @@ const config: Config = {
 			glow: "glow 6s ease-in-out infinite",
 			circle: "circle 10s ease-in-out infinite", // Slower animation
 		},
+		scrollBehavior: {
+			smooth: 'smooth',
+		  },
   		colors: {
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
