@@ -8,6 +8,7 @@ import Image from "next/image";
 import ButtonLink from "@/components/shared/buttons/primary";
 import InfiniteScroll from "@/components/home/infiniteScrolling";
 import { useEffect, useRef, useState } from "react";
+import Script from "next/script";
 
 const GA_TRACKING_ID = "G-45BY3HC1DS";
 
