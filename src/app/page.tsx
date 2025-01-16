@@ -1,16 +1,91 @@
 "use client"
 
 import IconText from "@/components/home/services";
-import { FaEnvelope, FaPhone, FaMapMarkerAlt } from "react-icons/fa";
 import content from '../constant/content.json'
 import Reveal from "@/components/animate/reveal";
 import Footer from "@/components/footer";
 import Image from "next/image";
-import ImgText from "@/components/home/industries";
 import ButtonLink from "@/components/shared/buttons/primary";
+import InfiniteScroll from "@/components/home/infiniteScrolling";
+import { useEffect, useRef, useState } from "react";
+
+const GA_TRACKING_ID = "G-45BY3HC1DS";
+
 export default function Home() {
+
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const [backgroundPosition, setBackgroundPosition] = useState(0);
+  const [isLocked, setIsLocked] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const section = sectionRef.current;
+
+      if (section) {
+        const sectionTop = section.getBoundingClientRect().top;
+        const sectionHeight = section.offsetHeight;
+        const windowHeight = window.innerHeight;
+
+        const scrollRatio = Math.min(
+          Math.max((windowHeight - sectionTop) / sectionHeight, 0),
+          1
+        );
+
+        if (scrollRatio >= 1) {
+          setIsLocked(true);
+          setBackgroundPosition(100);
+        } else if (sectionTop < windowHeight && sectionTop > -sectionHeight) {
+          setIsLocked(false);
+          const newBackgroundPosition = scrollRatio * 100;
+          setBackgroundPosition(newBackgroundPosition);
+        }
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+
+
+  const rows: { items: { word: string; image: string }[]; direction: "left" | "right" }[] = [
+    {
+      items: content.home.industries.row1,
+      direction: "left",
+    },
+    {
+      items: content.home.industries.row2,
+      direction: "right",
+    },
+
+  ];
+
+
+
   return (
     <>
+
+      <Script
+        strategy="afterInteractive"
+        src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
+      />
+      <Script
+        id="google-analytics"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GA_TRACKING_ID}', {
+              page_path: window.location.pathname,
+            });
+          `,
+        }}
+      />
+
       <section className="relative h-screen w-full overflow-hidden">
         {/* Background Video */}
         <video
@@ -24,32 +99,30 @@ export default function Home() {
           Your browser does not support the video tag.
         </video>
 
+        {/* Gradient Overlay */}
+        <div className="absolute bottom-0 left-0 w-full h-full bg-gradient-to-b from-transparent to-black"></div>
+
         {/* Content Overlay */}
-        <div className="relative z-10 flex items-center justify-center h-full w-full bg-black bg-opacity-50">
+        <div className="relative z-10 flex items-center justify-center h-full w-full">
           <div className="gap-4 w-full max-w-screen-xl text-white text-center">
             <div className="flex flex-col gap-6">
-              <h1 className="text-white text-2xl md:text-4xl lg:text-6xl font-bold leading-tight">Innovate Today, Secure Tomorrow</h1>
-
+              <h1 className="text-white text-2xl md:text-4xl lg:text-6xl font-bold leading-tight">
+                Innovate Today, Secure Tomorrow
+              </h1>
               <div className="flex justify-center gap-4 mt-4">
-                {/* <button className="px-6 py-2 border border-white text-white rounded-full hover:bg-white hover:text-black transition">
-                  Learn More
-                </button> */}
-                <ButtonLink
-                  href="/comingsoon"
-                >
-                  About Us
-                </ButtonLink>
+                <ButtonLink href="/comingsoon">About Us</ButtonLink>
               </div>
             </div>
           </div>
         </div>
       </section>
 
+
       <section className="relative h-fit w-full bg-black overflow-hidden">
         {/* Rows */}
-        <div className="container mx-auto pb-24 px-6 md:px-12 pt-48 md:pb-48 lg:pb-96 space-y-48">
+        <div className="container mx-auto pb-24 px-6 md:px-12 pt-40 space-y-48">
           {/* Row 0 */}
-          <div className="relative flex flex-col lg:flex-row items-center lg:items-center space-y-6 lg:space-y-0 lg:space-x-12 text-white">
+          <div className="relative flex flex-col lg:flex-row items-start lg:items-start space-y-6 lg:space-y-0 lg:space-x-12 text-white">
             {/* Glow Effect */}
             <div className="absolute w-[300px] h-[300px] bg-gradient-to-r from-blue-500 to-teal-500 blur-[150px] opacity-50 animate-circle lg:right-10 lg:top-1/2 transform lg:-translate-y-1/2"></div>
             <div className="hidden lg:block">
@@ -64,13 +137,13 @@ export default function Home() {
 
 
             <div className="block lg:hidden">
-              <Image
+              {/* <Image
                 src="/assets/homepage/images/mobile-service.png"
                 alt="service article"
                 width={600}
-                height={400}
+                height={800}
                 className="rounded-[25px] w-auto h-auto"
-              />
+              /> */}
             </div>
             <div className="flex flex-col w-full">
               <div className="px-4 md:px-10">
@@ -105,20 +178,38 @@ export default function Home() {
             </div>
           </div>
 
+        </div>
+      </section>
+
+      <section
+        ref={sectionRef}
+        className="relative w-full bg-cover bg-center bg-black"
+        style={{
+          // backgroundImage: "url('/assets/homepage/images/123.png')", // Replace with your background image
+          backgroundAttachment: "fixed",
+          backgroundSize: "cover",
+          backgroundPosition: `center ${isLocked ? "100%" : `${backgroundPosition}%`}`,
+        }}
+      >
+
+
+        <div className="container mx-auto pb-48 px-6 md:px-12 pt-48 space-y-48">
           {/* Row 1 */}
-          <div className="relative flex flex-col lg:flex-row items-center lg:items-center space-y-6 lg:space-y-0 lg:space-x-12">
-            {/* Glow Effect */}
+          <div className="relative flex flex-col lg:flex-row items-center space-y-6 lg:space-y-0 lg:space-x-12 text-white">
             <div className="absolute w-[300px] h-[300px] bg-gradient-to-r from-teal-500 to-blue-500 blur-[150px] opacity-50 animate-circle lg:left-10 lg:top-1/2 transform lg:-translate-y-1/2"></div>
-            {/* Text Content */}
             <div className="relative z-10 flex flex-col text-white text-center lg:text-left max-w-3xl">
               <h5 className="text-xl md:text-3xl lg:text-4xl font-bold leading-tight tracking-wide">
                 One Core Application Suite To Rule It All
               </h5>
               <p className="text-sm md:text-base lg:text-lg leading-relaxed mt-4">
-              <span className="text-blue-500">B</span>osTex  <span className="text-blue-500">E</span>nterprise  <span className="text-blue-500">P</span>latform for <span className="text-blue-500">S</span>ecurity (BTEPS) provide comprehensive physical security solution designed with advanced threat detection, prevention, and response capabilities.
+                <span className="text-blue-500">B</span>osTex{" "}
+                <span className="text-blue-500">E</span>nterprise{" "}
+                <span className="text-blue-500">P</span>latform for{" "}
+                <span className="text-blue-500">S</span>ecurity (BTEPS) provide
+                comprehensive physical security solution designed with advanced
+                threat detection, prevention, and response capabilities.
               </p>
             </div>
-            {/* Image */}
             <Image
               src="/assets/homepage/images/services5.png"
               alt="service article"
@@ -129,19 +220,18 @@ export default function Home() {
           </div>
 
           {/* Row 2 */}
-          <div className="relative flex flex-col lg:flex-row-reverse items-center lg:items-center space-y-6 lg:space-y-0 lg:space-x-12">
-            {/* Glow Effect */}
+          <div className="relative flex flex-col lg:flex-row-reverse items-center space-y-6 lg:space-y-0 lg:space-x-12">
             <div className="absolute w-[300px] h-[300px] bg-gradient-to-r from-blue-500 to-teal-500 blur-[150px] opacity-50 animate-circle lg:right-10 lg:top-1/2 transform lg:-translate-y-1/2"></div>
-            {/* Text Content */}
             <div className="relative z-10 flex flex-col text-white text-center lg:text-left max-w-3xl">
               <h5 className="text-xl md:text-3xl lg:text-4xl font-bold leading-tight tracking-wide">
                 Quality PACS Hardware and Software
               </h5>
               <p className="text-sm md:text-base lg:text-lg leading-relaxed mt-4">
-                Bostex Technologies stands out in physical security products through its high-quality manufacturing and unwavering commitment in engineering, durability, and innovation.
+                Bostex Technologies stands out in physical security products
+                through its high-quality manufacturing and unwavering commitment
+                in engineering, durability, and innovation.
               </p>
             </div>
-            {/* Image */}
             <Image
               src="/assets/homepage/images/services6.png"
               alt="service article"
@@ -152,34 +242,37 @@ export default function Home() {
           </div>
 
           {/* Row 3 */}
-          <div className="relative flex flex-col lg:flex-row items-center lg:items-center space-y-6 lg:space-y-0 lg:space-x-12">
-            {/* Glow Effect */}
-            <div className="absolute w-[300px] h-[300px] bg-gradient-to-r from-teal-500 to-blue-500 blur-[150px] opacity-50 animate-circle lg:left-10 lg:top-1/2 transform lg:-translate-y-1/2"></div>
-            {/* Text Content */}
+          <div className="relative flex flex-col lg:flex-row items-center space-y-6 lg:space-y-0 lg:space-x-12 text-white">
+            {/* padding Align with the other rows */}
+            <div className="absolute w-[300px] h-[300px] hidden"></div>
             <div className="relative z-10 flex flex-col text-white text-center lg:text-left max-w-3xl">
               <h5 className="text-xl md:text-3xl lg:text-4xl font-bold leading-tight tracking-wide">
-                Integration with 3rd Party Video Surveillance System and Intrusion Detection System
+                Integration with 3rd Party Video Surveillance System and Intrusion
+                Detection System
               </h5>
               <p className="text-sm md:text-base lg:text-lg leading-relaxed mt-4">
-                Integrate CCTV surveillance system and intrusion detection system for a unified security solution. Monitor, record, and respond to incidents in real time, enhancing situational awareness and incident management.
+                Integrate CCTV surveillance system and intrusion detection system
+                for a unified security solution. Monitor, record, and respond to
+                incidents in real time, enhancing situational awareness and
+                incident management.
               </p>
             </div>
-            {/* Image */}
             <Image
-              src="/assets/homepage/images/services7.jpeg"
+              src="/assets/homepage/images/services5.png"
               alt="service article"
               width={350}
-              height={600}
+              height={400}
               className="rounded-[25px] w-auto h-auto"
             />
           </div>
-        </div>
 
+        </div>
       </section>
 
+
+
       <section className="flex h-fit w-full bg-black bg-cover bg-center justify-center items-center">
-        <div className="flex flex-col items-center text-center pb-24">
-          {/* Glow Effect */}
+        {/* <div className="flex flex-col items-center text-center pb-24">
 
           <Reveal>
             <h5 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white tracking-wide leading-snug p-6">
@@ -188,12 +281,14 @@ export default function Home() {
           </Reveal>
           <ImgText content={content.home.industries.article}></ImgText>
 
-        </div>
-      </section>
-      <hr></hr>
+        </div> */}
 
+        <InfiniteScroll rows={rows} />
+      </section>
+
+      {/* 
       <section id="contact" className="grid grid-cols-1 sm:grid-cols-3  pt-24 pb-24 h-fit w-full bg-black">
-        {/* Email */}
+    
         <div className="flex flex-col items-center text-center space-y-4">
           <a href="mailto:sales@bostexintl.com" className="flex flex-col items-center space-y-4">
             <div className="flex items-center justify-center w-16 h-16 bg-white rounded-full">
@@ -205,7 +300,7 @@ export default function Home() {
           </a>
         </div>
 
-        {/* Phone Number */}
+      
         <div className="flex flex-col items-center text-center space-y-4">
           <a href="tel:+6580820023" className="flex flex-col items-center space-y-4">
             <div className="flex items-center justify-center w-16 h-16 bg-white rounded-full">
@@ -216,7 +311,7 @@ export default function Home() {
           </a>
         </div>
 
-        {/* Location */}
+   
         <div className="flex flex-col items-center text-center space-y-4">
           <a
             href="https://www.google.com/maps?q=514+Chai+Chee+Ln,+%2303-04,+Singapore+469029"
@@ -231,8 +326,8 @@ export default function Home() {
             <p className="text-gray-300 underline">514 Chai Chee Ln, #03-04, Singapore 469029</p>
           </a>
         </div>
-      </section>
-      <hr></hr>
+      </section> */}
+
       <Footer></Footer>
     </>
   );

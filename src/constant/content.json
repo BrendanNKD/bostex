@@ -31,41 +31,34 @@
             }
         },
         "industries": {
-            "title": "Market Segments",
-            "article": {
-                "data": [
-                    {
-                        "image": "/assets/homepage/images/indus1.png",
-                        "title": "Aviation",
-                        "desc": "Elevating aviation security with innovative technology."
-                    },
-                    {
-                        "image": "/assets/homepage/images/indus2.png",
-                        "title": "Data Centers",
-                        "desc": "Protecting critical data with cutting-edge security solutions."
-                    },
-                    {
-                        "image": "/assets/homepage/images/indus3.png",
-                        "title": "Government Agency",
-                        "desc": "Empowering agencies with reliable and secure systems."
-                    },
-                    {
-                        "image": "/assets/homepage/images/indus4.png",
-                        "title": "Health Care",
-                        "desc": "Securing healthcare facilities for uninterrupted care."
-                    },
-                    {
-                        "image": "/assets/homepage/images/indus5.png",
-                        "title": "Commercial",
-                        "desc": "Optimising security for diverse commercial spaces."
-                    },
-                    {
-                        "image": "/assets/homepage/images/indus6.png",
-                        "title": "Institution - Education",
-                        "desc": "Enhancing safety and security for educational institutions."
-                    }
-                ]
-            }
+            "row1": [
+                {
+                    "word": "AVIATION",
+                    "image": "/assets/homepage/images/indus1.png"
+                },
+                {
+                    "word": "DATA CENTER",
+                    "image": "/assets/homepage/images/indus2.png"
+                },
+                {
+                    "word": "GOVERNMENT AGENCY",
+                    "image": "/assets/homepage/images/indus3.png"
+                }
+            ],
+            "row2": [
+                {
+                    "word": "COMMERCIAL",
+                    "image": "/assets/homepage/images/indus5.png"
+                },
+                {
+                    "word": "EDUCATION",
+                    "image": "/assets/homepage/images/indus6.png"
+                },
+                {
+                    "word": "HEALTHCARE",
+                    "image": "/assets/homepage/images/indus4.png"
+                }
+            ]
         }
     }
 }

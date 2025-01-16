@@ -33,12 +33,22 @@ const config: Config = {
 			"75%": { transform: "translate(-20px, 10px)" },
 			"100%": { transform: "translate(0, 0)" },
 			},
+			"scroll-left": {
+				"0%": { transform: "translateX(0)" },
+				"100%": { transform: "translateX(-30%)" },
+			  },
+			  "scroll-right": {
+				"0%": { transform: "translateX(-30%)" },
+				"100%": { transform: "translateX(0)" },
+			  },
 		},
 		animation: {
 			typing: "typing 6s steps(40, end) infinite",
 			blink: "blink 0.6s step-end infinite",
 			glow: "glow 6s ease-in-out infinite",
 			circle: "circle 10s ease-in-out infinite", // Slower animation
+			"scroll-left": "scroll-left 15s linear infinite",
+			"scroll-right": "scroll-right 15s linear infinite",
 		},
 		scrollBehavior: {
 			smooth: 'smooth',
