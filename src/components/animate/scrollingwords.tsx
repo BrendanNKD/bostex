@@ -29,11 +29,11 @@ const ScrollingWords: React.FC<ScrollingWordsProps> = ({
           onMouseLeave={onMouseLeave}
         >
           {/* Word */}
-          <span className="relative text-white transition-colors duration-300 group-hover:text-black">
+          <span className="relative text-white transition-colors duration-300 group-hover:text-black select-none">
             {item.word}
           </span>
           {/* Dash */}
-          <span className="ml-8 text-white">—</span>
+          <span className="ml-8 text-white select-none">—</span>
         </div>
       ))}
     </div>
