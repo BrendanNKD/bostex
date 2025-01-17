@@ -1,5 +1,5 @@
 "use client"
-
+import { FaEnvelope, FaPhone, FaMapMarkerAlt } from "react-icons/fa"
 import IconText from "@/components/home/services";
 import content from '../constant/content.json'
 import Reveal from "@/components/animate/reveal";
@@ -68,22 +68,22 @@ export default function Home() {
   return (
     <>
 
-<Script
-  strategy="afterInteractive"
-  src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
-/>
-<Script
-  id="google-analytics"
-  strategy="afterInteractive"
-  dangerouslySetInnerHTML={{
-    __html: `
+      <Script
+        strategy="afterInteractive"
+        src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
+      />
+      <Script
+        id="google-analytics"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', '${GA_TRACKING_ID}');
     `,
-  }}
-/>
+        }}
+      />
       <section className="relative h-screen w-full overflow-hidden">
         {/* Background Video */}
         <video
@@ -183,7 +183,7 @@ export default function Home() {
         ref={sectionRef}
         className="relative w-full bg-cover bg-center bg-black"
         style={{
-          // backgroundImage: "url('/assets/homepage/images/123.png')", // Replace with your background image
+       //   backgroundImage: "url('/assets/homepage/images/123.png')", // Replace with your background image
           backgroundAttachment: "fixed",
           backgroundSize: "cover",
           backgroundPosition: `center ${isLocked ? "100%" : `${backgroundPosition}%`}`,
@@ -284,9 +284,9 @@ export default function Home() {
         <InfiniteScroll rows={rows} />
       </section>
 
-      {/* 
-      <section id="contact" className="grid grid-cols-1 sm:grid-cols-3  pt-24 pb-24 h-fit w-full bg-black">
-    
+
+      <section id="contact" className="grid grid-cols-1 sm:grid-cols-3  pt-20 pb-20 h-fit w-full bg-black">
+
         <div className="flex flex-col items-center text-center space-y-4">
           <a href="mailto:sales@bostexintl.com" className="flex flex-col items-center space-y-4">
             <div className="flex items-center justify-center w-16 h-16 bg-white rounded-full">
@@ -298,7 +298,7 @@ export default function Home() {
           </a>
         </div>
 
-      
+
         <div className="flex flex-col items-center text-center space-y-4">
           <a href="tel:+6580820023" className="flex flex-col items-center space-y-4">
             <div className="flex items-center justify-center w-16 h-16 bg-white rounded-full">
@@ -309,7 +309,7 @@ export default function Home() {
           </a>
         </div>
 
-   
+
         <div className="flex flex-col items-center text-center space-y-4">
           <a
             href="https://www.google.com/maps?q=514+Chai+Chee+Ln,+%2303-04,+Singapore+469029"
@@ -324,7 +324,7 @@ export default function Home() {
             <p className="text-gray-300 underline">514 Chai Chee Ln, #03-04, Singapore 469029</p>
           </a>
         </div>
-      </section> */}
+      </section>
 
       <Footer></Footer>
     </>
