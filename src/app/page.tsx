@@ -83,7 +83,7 @@ export default function Home() {
       gtag('config', '${GA_TRACKING_ID}');
     `,
   }}
-/>;
+/>
       <section className="relative h-screen w-full overflow-hidden">
         {/* Background Video */}
         <video
